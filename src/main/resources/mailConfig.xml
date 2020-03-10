@@ -20,8 +20,8 @@
 		class="com.kasafal.mail.CustomJavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com"/>
 		<property name="port" value="587"/>
-		<property name="username" value="kasafal@gmail.com"/>
-		<property name="password" value="ergD34SF@9new"/>
+		<property name="username" value="username@gmail.com"/>
+		<property name="password" value="Password"/>
 	</bean>
 	
 

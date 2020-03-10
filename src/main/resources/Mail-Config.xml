@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="Default_Sender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="username" value="kasafal@gmail.com" />
+		<property name="password" value="ergD34SF@9new" />
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="Default_Message" class="org.springframework.mail.SimpleMailMessage">
+		<property name="from" value="kasafal@gmail.com"/>
+		<property name="subject" value="Welcome to the world of You"/>
+	</bean>
+
+</beans>

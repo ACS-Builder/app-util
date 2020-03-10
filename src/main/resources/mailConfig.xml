@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="MailService" class="com.kasafal.mail.MailServiceUtil"
+		lazy-init="true">
+		<property name="service" ref="JavaMailSender"/>
+		<property name="properties">
+			<map>
+				<entry key="mail.debug" value="true"/>
+				<entry key="mail.smtp.starttls.enable" value="true"/>
+				<entry key="Default-Sender" value="kasafal2@gmail.com"/>
+				<entry key="Default-Sender-Name" value="Kasafal Tourism"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="JavaMailSender"
+		class="com.kasafal.mail.CustomJavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com"/>
+		<property name="port" value="587"/>
+		<property name="username" value="kasafal@gmail.com"/>
+		<property name="password" value="ergD34SF@9new"/>
+	</bean>
+	
+
+</beans>
